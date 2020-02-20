@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: montserrat, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #444444;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.btn {
+  background: none;
+  border: 2px solid rgb(17, 158, 169);
+  text-transform: uppercase;
+  padding: 12px 20px;
+  min-width: 200px;
+  margin: 10px;
+  cursor: pointer;
+  transition: color 0.4s linear;
+  position: relative;
+  color: rgb(17, 158, 169);
+}
+
+/*****************
+Buttons 1 and 2**/
+.btn1:hover,
+.btn2:hover {
+  color: #fff;
+}
+
+.btn1::before,
+.btn2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(17, 158, 169);
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.5, 0.4, 0.7);
+}
+
+.btn1::before {
+  transform: scaleX(0);
+}
+
+.btn2::before {
+  transform: scaleY(0);
+}
+
+.btn1:hover::before {
+  transform: scaleX(1);
+}
+
+.btn2:hover::before {
+  transform: scaleY(1);
+}
+
+/*****************
+Button 3**/
+.btn3::before,
+.btn3::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 4px;
+  background: #fff;
+  transform: skewX(50deg);
+  transition: 0.4s linear;
+}
+
+.btn3::before {
+  top: -4px;
+  left: 10%;
+}
+
+.btn3::after {
+  bottom: -4px;
+  right: 10%;
+}
+
+.btn3:hover::before {
+  left: 80%;
+}
+
+.btn3:hover::after {
+  right: 80%;
+}
+
+/*****************
+Buttons 4, 5, 6 and 7**/
+.btn4,
+.btn5,
+.btn6,
+.btn7 {
+  overflow: hidden;
+}
+
+.btn4,
+.btn5 {
+  color: rgb(17, 158, 169);
+}
+
+.btn6,
+.btn7 {
+  color: #fff;
+}
+
+.btn4:hover,
+.btn5:hover {
+  color: #fff;
+}
+
+.btn6:hover,
+.btn7:hover {
+  color: rgb(17, 158, 169);
+}
+
+.btn4::before,
+.btn5::before,
+.btn6::before,
+.btn7::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: rgb(17, 158, 169);
+  z-index: -1;
+  transition: 0.8s;
+}
+
+.btn4::before,
+.btn6::before {
+  top: 0;
+  border-radius: 0 0 50% 50%;
+}
+
+.btn5::before,
+.btn7::before {
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.btn6::before,
+.btn7::before {
+  height: 180%;
+}
+
+.btn4:hover::before,
+.btn5:hover::before {
+  height: 180%;
+}
+
+.btn6:hover::before,
+.btn7:hover::before {
+  height: 0%;
+}
